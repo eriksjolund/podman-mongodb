@@ -2,9 +2,9 @@ status: draft documentation, right now untested
 
 # podman-mongodb
 
-Documentation of how to run __docker.io/library/mongodb__ with Podman on macOS and store the MongoDB data directory on the macOS host.
+Run Mongodb on macOS with Podman.
 
-## Run Mongodb on macOS with Podman
+Documentation of how to run __docker.io/library/mongodb__ with Podman on macOS and store the MongoDB data directory on the macOS host.
 
 ### Examine the container image on a Linux computer
 
@@ -15,10 +15,9 @@ in the container that should be mapped to your regular user.
 2. `podman pull docker.io/library/mongo`
 3. run the command
    ```
-   $ podman -c podman-machine-default \
-            image inspect \
-	          --format "user: {{.User}}" \
-	          docker.io/library/mongo
+   $ podman image inspect \
+	     --format "user: {{.User}}" \
+	     docker.io/library/mongo
    user:
    $
    ```
